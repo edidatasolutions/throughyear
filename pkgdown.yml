@@ -1,0 +1,9 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  throughyear: throughyear.html
+last_built: 2026-09-27T23:30Z
+urls:
+  reference: https://edidatasolutions.github.io/throughyear/reference
+  article: https://edidatasolutions.github.io/throughyear/articles
