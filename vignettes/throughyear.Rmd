@@ -1,0 +1,67 @@
+---
+title: "Evaluating a through-year assessment system"
+output: markdown::html_format
+vignette: >
+  %\VignetteIndexEntry{Evaluating a through-year assessment system}
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+In a through-year model, interims given during the year feed into, or partly
+replace, the spring summative. throughyear treats the whole system as the unit
+of analysis.
+
+## Two cohorts
+
+Last year's cohort (calibration) has interims and summative scores; this
+year's cohort (operational) has only interims. Some students enrolled late
+and missed interims. Others ("fast growers") gained ground after the last
+interim, which interims cannot reveal.
+
+```{r}
+library(throughyear)
+sim <- ty_simulate(n_calibration = 1500, n_operational = 1500, seed = 11)
+head(sim[c("cohort", "late", "fast", "I1", "I2", "I3", "S")])
+```
+
+## Link interims to the summative scale
+
+```{r}
+link <- ty_link(sim)
+link
+op <- sim[sim$cohort == "operational", ]
+prior <- predict(link, op)
+aggregate(prior$sd, list(late_enroller = op$late), mean)
+```
+
+Measurement error is carried forward: fewer or noisier interims give wider
+priors, not wrong ones.
+
+## Routing policies
+
+```{r}
+mst <- ty_mst_default()
+pol <- ty_policies(mst, op$theta_S, prior, seed = 1)
+summary(pol)[c("policy", "routing_accuracy", "mean_items", "bias", "rmse")]
+```
+
+## Fairness
+
+```{r}
+fair <- ty_fairness(pol, list(late = op$late, fast = op$fast))
+fair[c("policy", "group", "routed_too_easy", "bias")]
+```
+
+Scoring with the interim prior biases fast growers downward; using the prior
+only for routing keeps their reported scores unbiased.
+
+## Can a through-year score replace the summative?
+
+```{r}
+ty_decisions(mst, op$theta_S, prior, predict(link, op, suffix = "_r2"),
+             cut = 0.3, groups = list(fast = op$fast), seed = 2)
+```

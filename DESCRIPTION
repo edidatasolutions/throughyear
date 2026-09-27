@@ -1,0 +1,21 @@
+Package: throughyear
+Title: Linking, Routing and Fairness for Through-Year Assessment
+Version: 0.1.0
+Authors@R: person("Daniel", "Edi", email = "danieledi2026@gmail.com", role = c("aut", "cre"))
+Description: Treats a through-year assessment system (interims during the
+    year feeding a multistage summative) as the unit of analysis. Links
+    interims to the summative scale with a latent multivariate normal model
+    that carries each score's measurement error forward and handles missing
+    interims; simulates cold-start versus prior-informed routing in a
+    two-stage multistage test; checks whether priors disadvantage late
+    enrollers, low scorers or fast growers; and evaluates decision accuracy
+    and consistency of through-year scores against a single summative.
+License: MIT + file LICENSE
+URL: https://github.com/edidatasolutions/throughyear, https://edidatasolutions.github.io/throughyear/
+BugReports: https://github.com/edidatasolutions/throughyear/issues
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports: stats
+Suggests: knitr, markdown
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.0
