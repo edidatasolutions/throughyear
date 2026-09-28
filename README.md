@@ -52,15 +52,17 @@ interim true scores correlate around 0.99. A student's summative prior is
 the conditional distribution given their interims, so measurement error
 carries forward and late enrollers get wider priors rather than wrong ones.
 
-## Validation (known truth, 3 replications, `inst/validation/known_truth.R`)
+## Validation (known truth, 100 replications)
 
 3,000 calibration and 3,000 operational students; 3 interims; 10% late
 enrollers missing 2 interims; 10% "fast growers" who gain +0.6 logits after
 the last interim.
 
-**Priors are calibrated:** z mean 0.02, SD 0.99, 90% intervals cover 90.5%.
+**Priors are calibrated:** z mean 0.00, SD 1.01, 90% intervals cover 89.9%.
 Late enrollers get wider priors (0.45 vs 0.35) that are still calibrated
-(coverage 91%). Latent correlations are recovered to within 0.01.
+(coverage 89.6%). Latent correlations are recovered to within 0.01. For fast
+growers the prior is, by design of the scenario, wrong: it misses their
+late growth (coverage 52%).
 
 **Policies** (1-3 MST):
 
@@ -68,37 +70,38 @@ Late enrollers get wider priors (0.45 vs 0.35) that are still calibrated
 |---|---|---|---|
 | cold start | 70% | 36 | 0.35 |
 | prior for routing only | 84% | 36 | 0.35 |
-| prior for routing and scoring | 84% | 36 | 0.25 |
-| prior + 6-item router | 84% | 30 | 0.38 |
-| prior only, no router | 83% | 24 | 0.42 |
+| prior for routing and scoring | 85% | 36 | 0.25 |
+| prior + 6-item router | 84% | 30 | 0.37 |
+| prior only, no router | 82% | 24 | 0.42 |
 
 **Fairness is not one-directional:**
 
 | group | policy | routed too easy | score bias |
 |---|---|---|---|
-| fast growers | cold | 15% | -0.05 |
-| fast growers | prior routing only | 28% | -0.04 |
-| fast growers | prior routing + scoring | 30% | **-0.30** |
+| fast growers | cold | 18% | -0.07 |
+| fast growers | prior routing only | 27% | -0.05 |
+| fast growers | prior routing + scoring | 27% | **-0.29** |
 | lowest interim quintile | cold | 2% | **+0.15** |
-| lowest interim quintile | prior routing + scoring | 6% | -0.01 |
+| lowest interim quintile | prior routing + scoring | 6% | 0.00 |
 
 Scoring with the interim prior penalizes students whose growth accelerated
 after the last interim. Using the prior for routing only keeps their reported
 scores unbiased. The conventional population prior has its own bias: it
 over-reports the lowest scorers. Routing with priors does send fast growers
-to easier modules more often (28% vs 15%), which costs them some precision
-but not bias.
+to easier modules more often (27% vs 18%), which costs them some precision
+but little bias.
 
 **Summative replacement** (proficiency cut at theta = 0.3):
 
 | method | accuracy | consistency | fast growers wrongly "not proficient" |
 |---|---|---|---|
-| single summative | 89.6% | 85.2% | 6.0% |
-| through-year projection alone | 90.1% | 89.2% | **22.3%** |
-| summative scored with interim prior | 93.1% | 91.2% | 11.7% |
+| single summative | 89.7% | 85.7% | 6.4% |
+| through-year projection alone | 90.3% | 89.4% | **21.4%** |
+| summative scored with interim prior | 92.8% | 91.1% | 11.8% |
 
 Overall accuracy of a through-year replacement looks as good as the
-summative's, but it misclassifies late bloomers at nearly four times the rate.
+summative's, but it misclassifies late bloomers at more than three times the
+rate.
 That is the defensibility question for accountability.
 
 ## Status and assumptions
