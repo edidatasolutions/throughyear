@@ -109,3 +109,9 @@ linear growth in the simulator (linking itself is distribution-free beyond
 multivariate normality). Next: growth-aware links (occasion timing as a
 covariate), adaptive shrinkage of the prior (discounting it when interim
 evidence is stale), subgroup-calibrated priors, and 1-2-3 panel designs.
+
+## Getting help and contributing
+
+Questions and bug reports: https://github.com/edidatasolutions/throughyear/issues. See
+[CONTRIBUTING.md](.github/CONTRIBUTING.md) for how to report problems, get
+help, or contribute code.
