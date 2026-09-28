@@ -103,7 +103,7 @@ after the last interim, which interims cannot reveal.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">prior</span><span class="op">$</span><span class="va">sd</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>late_enroller <span class="op">=</span> <span class="va">op</span><span class="op">$</span><span class="va">late</span><span class="op">)</span>, <span class="va">mean</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   late_enroller         x</span></span>
 <span><span class="co">#&gt; 1         FALSE 0.3316873</span></span>
-<span><span class="co">#&gt; 2          TRUE 0.4455323</span></span></code></pre></div>
+<span><span class="co">#&gt; 2          TRUE 0.4455327</span></span></code></pre></div>
 <p>Measurement error is carried forward: fewer or noisier interims give
 wider priors, not wrong ones.</p>
 </div>
@@ -115,11 +115,11 @@ wider priors, not wrong ones.</p>
 <span><span class="va">pol</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ty_policies.html">ty_policies</a></span><span class="op">(</span><span class="va">mst</span>, <span class="va">op</span><span class="op">$</span><span class="va">theta_S</span>, <span class="va">prior</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pol</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"policy"</span>, <span class="st">"routing_accuracy"</span>, <span class="st">"mean_items"</span>, <span class="st">"bias"</span>, <span class="st">"rmse"</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt;        policy routing_accuracy mean_items          bias      rmse</span></span>
-<span><span class="co">#&gt; 1        cold        0.7093333         36  0.0009719754 0.3399590</span></span>
-<span><span class="co">#&gt; 2 prior_route        0.8586667         36  0.0008716408 0.3435161</span></span>
-<span><span class="co">#&gt; 3  prior_both        0.8493333         36 -0.0064346982 0.2452487</span></span>
-<span><span class="co">#&gt; 4 prior_short        0.8540000         30  0.0039293059 0.3789190</span></span>
-<span><span class="co">#&gt; 5  prior_only        0.8340000         24 -0.0080730354 0.4099369</span></span></code></pre></div>
+<span><span class="co">#&gt; 1        cold        0.7093333         36  0.0009719751 0.3399590</span></span>
+<span><span class="co">#&gt; 2 prior_route        0.8586667         36  0.0008716406 0.3435161</span></span>
+<span><span class="co">#&gt; 3  prior_both        0.8493333         36 -0.0064347036 0.2452487</span></span>
+<span><span class="co">#&gt; 4 prior_short        0.8540000         30  0.0039293056 0.3789190</span></span>
+<span><span class="co">#&gt; 5  prior_only        0.8340000         24 -0.0080730357 0.4099369</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="fairness">Fairness<a class="anchor" aria-label="anchor" href="#fairness"></a>
@@ -132,8 +132,8 @@ wider priors, not wrong ones.</p>
 <span><span class="co">#&gt; 2         cold  fast      0.17266187 -0.06216104</span></span>
 <span><span class="co">#&gt; 3  prior_route  late      0.07092199  0.04052520</span></span>
 <span><span class="co">#&gt; 4  prior_route  fast      0.30215827 -0.08633598</span></span>
-<span><span class="co">#&gt; 5   prior_both  late      0.07801418 -0.01236379</span></span>
-<span><span class="co">#&gt; 6   prior_both  fast      0.31654676 -0.31137606</span></span>
+<span><span class="co">#&gt; 5   prior_both  late      0.07801418 -0.01236382</span></span>
+<span><span class="co">#&gt; 6   prior_both  fast      0.31654676 -0.31137601</span></span>
 <span><span class="co">#&gt; 7  prior_short  late      0.07092199  0.05851682</span></span>
 <span><span class="co">#&gt; 8  prior_short  fast      0.33093525 -0.08946388</span></span>
 <span><span class="co">#&gt; 9   prior_only  late      0.10638298  0.01009961</span></span>

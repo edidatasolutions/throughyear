@@ -46,7 +46,7 @@ prior <- predict(link, op)
 aggregate(prior$sd, list(late_enroller = op$late), mean)
 #>   late_enroller         x
 #> 1         FALSE 0.3316873
-#> 2          TRUE 0.4455323
+#> 2          TRUE 0.4455327
 ```
 
 Measurement error is carried forward: fewer or noisier interims give
@@ -60,11 +60,11 @@ mst <- ty_mst_default()
 pol <- ty_policies(mst, op$theta_S, prior, seed = 1)
 summary(pol)[c("policy", "routing_accuracy", "mean_items", "bias", "rmse")]
 #>        policy routing_accuracy mean_items          bias      rmse
-#> 1        cold        0.7093333         36  0.0009719754 0.3399590
-#> 2 prior_route        0.8586667         36  0.0008716408 0.3435161
-#> 3  prior_both        0.8493333         36 -0.0064346982 0.2452487
-#> 4 prior_short        0.8540000         30  0.0039293059 0.3789190
-#> 5  prior_only        0.8340000         24 -0.0080730354 0.4099369
+#> 1        cold        0.7093333         36  0.0009719751 0.3399590
+#> 2 prior_route        0.8586667         36  0.0008716406 0.3435161
+#> 3  prior_both        0.8493333         36 -0.0064347036 0.2452487
+#> 4 prior_short        0.8540000         30  0.0039293056 0.3789190
+#> 5  prior_only        0.8340000         24 -0.0080730357 0.4099369
 ```
 
 ## Fairness
@@ -78,8 +78,8 @@ fair[c("policy", "group", "routed_too_easy", "bias")]
 #> 2         cold  fast      0.17266187 -0.06216104
 #> 3  prior_route  late      0.07092199  0.04052520
 #> 4  prior_route  fast      0.30215827 -0.08633598
-#> 5   prior_both  late      0.07801418 -0.01236379
-#> 6   prior_both  fast      0.31654676 -0.31137606
+#> 5   prior_both  late      0.07801418 -0.01236382
+#> 6   prior_both  fast      0.31654676 -0.31137601
 #> 7  prior_short  late      0.07092199  0.05851682
 #> 8  prior_short  fast      0.33093525 -0.08946388
 #> 9   prior_only  late      0.10638298  0.01009961

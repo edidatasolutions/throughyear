@@ -3,7 +3,7 @@ pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   throughyear: throughyear.html
-last_built: 2026-09-28T01:22Z
+last_built: 2026-09-28T01:41Z
 urls:
   reference: https://edidatasolutions.github.io/throughyear/reference
   article: https://edidatasolutions.github.io/throughyear/articles
