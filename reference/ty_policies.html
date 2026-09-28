@@ -140,23 +140,23 @@ student priors' implied marginal.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">500</span>, n_operational <span class="op">=</span> <span class="fl">500</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">300</span>, n_operational <span class="op">=</span> <span class="fl">300</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">op</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">[</span><span class="va">sim</span><span class="op">$</span><span class="va">cohort</span> <span class="op">==</span> <span class="st">"operational"</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">prior</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="fu"><a href="ty_link.html">ty_link</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="va">op</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">pol</span> <span class="op">&lt;-</span> <span class="fu">ty_policies</span><span class="op">(</span><span class="fu"><a href="ty_mst_default.html">ty_mst_default</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">op</span><span class="op">$</span><span class="va">theta_S</span>, <span class="va">prior</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pol</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        policy   n routing_accuracy routed_too_easy routed_too_hard mean_items</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        cold 500            0.688           0.156           0.156         36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 prior_route 500            0.848           0.062           0.090         36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  prior_both 500            0.870           0.064           0.066         36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 prior_short 500            0.840           0.074           0.086         30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  prior_only 500            0.844           0.068           0.088         24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        cold 300             0.73      0.12000000      0.15000000         36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 prior_route 300             0.87      0.05000000      0.08000000         36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  prior_both 300             0.86      0.05666667      0.08333333         36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 prior_short 300             0.83      0.06666667      0.10333333         30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  prior_only 300             0.82      0.07000000      0.11000000         24</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           bias      rmse   mean_se</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -0.022841197 0.3673707 0.3505375</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.007636885 0.3491542 0.3497850</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.018125193 0.2584345 0.2431927</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.003427651 0.3758321 0.3748904</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -0.008561548 0.4233342 0.4114557</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -0.010955884 0.3519350 0.3488391</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.006595008 0.3514604 0.3461850</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.009668233 0.2565423 0.2559708</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.012397010 0.3756825 0.3723276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -0.021422683 0.4211025 0.4077246</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

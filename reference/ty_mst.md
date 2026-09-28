@@ -35,5 +35,5 @@ A \`ty_mst\`.
 mst <- ty_mst(routing_b = seq(-1.5, 1.5, length.out = 10),
               modules = list(easy = rnorm(20, -1, 0.5), hard = rnorm(20, 1, 0.5)))
 mst$cuts   # where the two modules' information functions cross
-#> [1] 0.02073355
+#> [1] 0.002470153
 ```

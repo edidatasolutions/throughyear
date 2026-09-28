@@ -37,13 +37,13 @@ Data frame: \`mean\`, \`sd\`, \`n_interims\`.
 ## Examples
 
 ``` r
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 link <- ty_link(sim)
 op <- sim[sim$cohort == "operational", ]
 prior <- predict(link, op)
 # late enrollers get wider priors
 aggregate(prior$sd, list(late = op$late), mean)
 #>    late         x
-#> 1 FALSE 0.3132153
-#> 2  TRUE 0.4598928
+#> 1 FALSE 0.3490794
+#> 2  TRUE 0.4274624
 ```

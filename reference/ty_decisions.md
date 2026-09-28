@@ -74,24 +74,24 @@ Data frame: \`method\`, \`group\`, \`accuracy\`, \`consistency\`,
 ## Examples
 
 ``` r
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 op <- sim[sim$cohort == "operational", ]
 link <- ty_link(sim)
 ty_decisions(ty_mst_default(), op$theta_S, predict(link, op),
              predict(link, op, suffix = "_r2"), cut = 0.3,
              groups = list(fast = op$fast), seed = 1)
 #>         method group   n  accuracy consistency false_proficient
-#> 1    summative   all 500 0.8980000   0.8540000            0.044
-#> 2    summative  fast  43 0.9767442   0.9302326            0.000
-#> 3 through_year   all 500 0.8920000   0.8720000            0.050
-#> 4 through_year  fast  43 0.7906977   0.9069767            0.000
-#> 5     combined   all 500 0.9280000   0.8980000            0.034
-#> 6     combined  fast  43 0.9302326   0.8837209            0.000
+#> 1    summative   all 300 0.9266667   0.8500000       0.03666667
+#> 2    summative  fast  30 1.0000000   0.8666667       0.00000000
+#> 3 through_year   all 300 0.9033333   0.9066667       0.03666667
+#> 4 through_year  fast  30 0.7666667   1.0000000       0.00000000
+#> 5     combined   all 300 0.9266667   0.9000000       0.02000000
+#> 6     combined  fast  30 0.8000000   0.8000000       0.00000000
 #>   false_not_proficient
-#> 1           0.05800000
-#> 2           0.02325581
-#> 3           0.05800000
-#> 4           0.20930233
-#> 5           0.03800000
-#> 6           0.06976744
+#> 1           0.03666667
+#> 2           0.00000000
+#> 3           0.06000000
+#> 4           0.23333333
+#> 5           0.05333333
+#> 6           0.20000000
 ```

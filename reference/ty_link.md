@@ -54,17 +54,17 @@ A \`ty_link\` object with \`mu\`, \`Sigma\`, \`vars\`, \`summative\`,
 ## Examples
 
 ``` r
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 link <- ty_link(sim)
 link
-#> <ty_link> 1000 students | 3 interims -> S | EM converged in 192 iterations
+#> <ty_link> 600 students | 3 interims -> S | EM converged in 216 iterations
 #> latent means:
 #>      I1      I2      I3       S 
-#> 195.156 196.779 198.660   0.057 
+#> 195.533 197.459 198.970   0.058 
 #> latent correlations:
 #>       I1    I2    I3     S
-#> I1 1.000 0.983 0.988 0.968
-#> I2 0.983 1.000 0.993 0.991
-#> I3 0.988 0.993 1.000 0.982
-#> S  0.968 0.991 0.982 1.000
+#> I1 1.000 0.981 0.980 0.948
+#> I2 0.981 1.000 0.986 0.957
+#> I3 0.980 0.986 1.000 0.985
+#> S  0.948 0.957 0.985 1.000
 ```

@@ -78,15 +78,15 @@ for a replicate set); SEs are still read from the `_se` columns.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">500</span>, n_operational <span class="op">=</span> <span class="fl">500</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">300</span>, n_operational <span class="op">=</span> <span class="fl">300</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">link</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_link.html">ty_link</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">op</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">[</span><span class="va">sim</span><span class="op">$</span><span class="va">cohort</span> <span class="op">==</span> <span class="st">"operational"</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">prior</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">link</span>, <span class="va">op</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># late enrollers get wider priors</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">prior</span><span class="op">$</span><span class="va">sd</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>late <span class="op">=</span> <span class="va">op</span><span class="op">$</span><span class="va">late</span><span class="op">)</span>, <span class="va">mean</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    late         x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 FALSE 0.3132153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  TRUE 0.4598928</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 FALSE 0.3490794</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  TRUE 0.4274624</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

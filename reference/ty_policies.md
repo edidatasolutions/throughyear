@@ -66,21 +66,21 @@ plus \`theta\`.
 ## Examples
 
 ``` r
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 op <- sim[sim$cohort == "operational", ]
 prior <- predict(ty_link(sim), op)
 pol <- ty_policies(ty_mst_default(), op$theta_S, prior, seed = 1)
 summary(pol)
 #>        policy   n routing_accuracy routed_too_easy routed_too_hard mean_items
-#> 1        cold 500            0.688           0.156           0.156         36
-#> 2 prior_route 500            0.848           0.062           0.090         36
-#> 3  prior_both 500            0.870           0.064           0.066         36
-#> 4 prior_short 500            0.840           0.074           0.086         30
-#> 5  prior_only 500            0.844           0.068           0.088         24
+#> 1        cold 300             0.73      0.12000000      0.15000000         36
+#> 2 prior_route 300             0.87      0.05000000      0.08000000         36
+#> 3  prior_both 300             0.86      0.05666667      0.08333333         36
+#> 4 prior_short 300             0.83      0.06666667      0.10333333         30
+#> 5  prior_only 300             0.82      0.07000000      0.11000000         24
 #>           bias      rmse   mean_se
-#> 1 -0.022841197 0.3673707 0.3505375
-#> 2  0.007636885 0.3491542 0.3497850
-#> 3  0.018125193 0.2584345 0.2431927
-#> 4  0.003427651 0.3758321 0.3748904
-#> 5 -0.008561548 0.4233342 0.4114557
+#> 1 -0.010955884 0.3519350 0.3488391
+#> 2 -0.006595008 0.3514604 0.3461850
+#> 3  0.009668233 0.2565423 0.2559708
+#> 4  0.012397010 0.3756825 0.3723276
+#> 5 -0.021422683 0.4211025 0.4077246
 ```

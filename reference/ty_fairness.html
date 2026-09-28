@@ -77,18 +77,18 @@ last interim) is the central fairness signal.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">500</span>, n_operational <span class="op">=</span> <span class="fl">500</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">300</span>, n_operational <span class="op">=</span> <span class="fl">300</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">op</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">[</span><span class="va">sim</span><span class="op">$</span><span class="va">cohort</span> <span class="op">==</span> <span class="st">"operational"</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">prior</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="fu"><a href="ty_link.html">ty_link</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="va">op</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">pol</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_policies.html">ty_policies</a></span><span class="op">(</span><span class="fu"><a href="ty_mst_default.html">ty_mst_default</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">op</span><span class="op">$</span><span class="va">theta_S</span>, <span class="va">prior</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fair</span> <span class="op">&lt;-</span> <span class="fu">ty_fairness</span><span class="op">(</span><span class="va">pol</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>late <span class="op">=</span> <span class="va">op</span><span class="op">$</span><span class="va">late</span>, fast <span class="op">=</span> <span class="va">op</span><span class="op">$</span><span class="va">fast</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fair</span><span class="op">[</span><span class="va">fair</span><span class="op">$</span><span class="va">group</span> <span class="op">==</span> <span class="st">"fast"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"policy"</span>, <span class="st">"routed_too_easy"</span>, <span class="st">"bias"</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         policy routed_too_easy        bias</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         cold       0.1162791 -0.08065422</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  prior_route       0.2325581 -0.03858849</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   prior_both       0.2325581 -0.29279601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  prior_short       0.3023256 -0.01788807</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  prior_only       0.3255814 -0.11648421</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         cold      0.13333333 -0.12369623</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  prior_route      0.06666667 -0.16062740</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   prior_both      0.13333333 -0.28678635</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  prior_short      0.10000000 -0.10763433</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  prior_only      0.20000000 -0.08502572</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

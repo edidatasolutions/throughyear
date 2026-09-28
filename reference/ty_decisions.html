@@ -136,26 +136,26 @@ independent sets of interim scores (`prior` and `prior_r2`).</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">500</span>, n_operational <span class="op">=</span> <span class="fl">500</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_simulate.html">ty_simulate</a></span><span class="op">(</span>n_calibration <span class="op">=</span> <span class="fl">300</span>, n_operational <span class="op">=</span> <span class="fl">300</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">op</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">[</span><span class="va">sim</span><span class="op">$</span><span class="va">cohort</span> <span class="op">==</span> <span class="st">"operational"</span>, <span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">link</span> <span class="op">&lt;-</span> <span class="fu"><a href="ty_link.html">ty_link</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">ty_decisions</span><span class="op">(</span><span class="fu"><a href="ty_mst_default.html">ty_mst_default</a></span><span class="op">(</span><span class="op">)</span>, <span class="va">op</span><span class="op">$</span><span class="va">theta_S</span>, <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">link</span>, <span class="va">op</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>             <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">link</span>, <span class="va">op</span>, suffix <span class="op">=</span> <span class="st">"_r2"</span><span class="op">)</span>, cut <span class="op">=</span> <span class="fl">0.3</span>,</span></span>
 <span class="r-in"><span>             groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>fast <span class="op">=</span> <span class="va">op</span><span class="op">$</span><span class="va">fast</span><span class="op">)</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         method group   n  accuracy consistency false_proficient</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    summative   all 500 0.8980000   0.8540000            0.044</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    summative  fast  43 0.9767442   0.9302326            0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 through_year   all 500 0.8920000   0.8720000            0.050</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 through_year  fast  43 0.7906977   0.9069767            0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     combined   all 500 0.9280000   0.8980000            0.034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     combined  fast  43 0.9302326   0.8837209            0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    summative   all 300 0.9266667   0.8500000       0.03666667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    summative  fast  30 1.0000000   0.8666667       0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 through_year   all 300 0.9033333   0.9066667       0.03666667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 through_year  fast  30 0.7666667   1.0000000       0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     combined   all 300 0.9266667   0.9000000       0.02000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     combined  fast  30 0.8000000   0.8000000       0.00000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   false_not_proficient</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           0.05800000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2           0.02325581</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           0.05800000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           0.20930233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5           0.03800000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           0.06976744</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           0.03666667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           0.06000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           0.23333333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           0.05333333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           0.20000000</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
