@@ -44,6 +44,6 @@ prior <- predict(link, op)
 # late enrollers get wider priors
 aggregate(prior$sd, list(late = op$late), mean)
 #>    late         x
-#> 1 FALSE 0.3131202
-#> 2  TRUE 0.4599604
+#> 1 FALSE 0.3132153
+#> 2  TRUE 0.4598928
 ```

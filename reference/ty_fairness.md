@@ -37,9 +37,9 @@ pol <- ty_policies(ty_mst_default(), op$theta_S, prior, seed = 1)
 fair <- ty_fairness(pol, list(late = op$late, fast = op$fast))
 fair[fair$group == "fast", c("policy", "routed_too_easy", "bias")]
 #>         policy routed_too_easy        bias
-#> 2         cold       0.1162791 -0.08065108
-#> 4  prior_route       0.2325581 -0.03858507
-#> 6   prior_both       0.2325581 -0.29281599
-#> 8  prior_short       0.3023256 -0.01788401
-#> 10  prior_only       0.3255814 -0.11648027
+#> 2         cold       0.1162791 -0.08065422
+#> 4  prior_route       0.2325581 -0.03858849
+#> 6   prior_both       0.2325581 -0.29279601
+#> 8  prior_short       0.3023256 -0.01788807
+#> 10  prior_only       0.3255814 -0.11648421
 ```
