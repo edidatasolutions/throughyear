@@ -57,7 +57,7 @@ A \`ty_link\` object with \`mu\`, \`Sigma\`, \`vars\`, \`summative\`,
 sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 link <- ty_link(sim)
 link
-#> <ty_link> 600 students | 3 interims -> S | EM converged in 216 iterations
+#> <ty_link> 600 students | 3 interims -> S | EM converged in 219 iterations
 #> latent means:
 #>      I1      I2      I3       S 
 #> 195.533 197.459 198.970   0.058 
