@@ -13,6 +13,9 @@ This is the first submission of throughyear.
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+* Words flagged as possibly misspelled are author names of cited references
+  (Dempster, Varadhan), the SQUAREM acceleration method, and standard
+  educational-assessment terms (interims, summative, enrollers).
 
 ## Notes for the reviewer
 
