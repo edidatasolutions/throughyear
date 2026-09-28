@@ -42,7 +42,7 @@ not attenuated, and a student's projection carries their own interim
 precision forward.
 }
 \examples{
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 link <- ty_link(sim)
 link
 }

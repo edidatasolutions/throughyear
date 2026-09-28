@@ -53,7 +53,7 @@ batch_solve <- function(L, b) {
 #' @return A `ty_link` object with `mu`, `Sigma`, `vars`, `summative`,
 #'   `converged`, `iterations` (EM step evaluations), `loglik`.
 #' @examples
-#' sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+#' sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 #' link <- ty_link(sim)
 #' link
 #' @export
@@ -155,7 +155,7 @@ ty_link <- function(data, interims = attr(data, "interims"), summative = "S",
 #' @param ... Unused.
 #' @return Data frame: `mean`, `sd`, `n_interims`.
 #' @examples
-#' sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+#' sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 #' link <- ty_link(sim)
 #' op <- sim[sim$cohort == "operational", ]
 #' prior <- predict(link, op)

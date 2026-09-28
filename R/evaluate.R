@@ -21,7 +21,7 @@
 #' @return A `ty_policies` object: named list of [ty_administer()] results,
 #'   plus `theta`.
 #' @examples
-#' sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+#' sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 #' op <- sim[sim$cohort == "operational", ]
 #' prior <- predict(ty_link(sim), op)
 #' pol <- ty_policies(ty_mst_default(), op$theta_S, prior, seed = 1)
@@ -73,7 +73,7 @@ summary.ty_policies <- function(object, ...) {
 #' @param groups Named list of logical vectors (one element per examinee).
 #' @return Data frame: `policy`, `group`, and the metrics of `summary()`.
 #' @examples
-#' sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+#' sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 #' op <- sim[sim$cohort == "operational", ]
 #' prior <- predict(ty_link(sim), op)
 #' pol <- ty_policies(ty_mst_default(), op$theta_S, prior, seed = 1)
@@ -116,7 +116,7 @@ ty_fairness <- function(policies, groups) {
 #' @return Data frame: `method`, `group`, `accuracy`, `consistency`,
 #'   `false_proficient`, `false_not_proficient`.
 #' @examples
-#' sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+#' sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 #' op <- sim[sim$cohort == "operational", ]
 #' link <- ty_link(sim)
 #' ty_decisions(ty_mst_default(), op$theta_S, predict(link, op),

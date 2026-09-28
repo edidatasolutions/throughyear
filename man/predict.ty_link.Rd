@@ -25,7 +25,7 @@ observed interims and their SEs. Missing interims simply drop out, so late
 enrollers get wider priors rather than wrong ones.
 }
 \examples{
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 link <- ty_link(sim)
 op <- sim[sim$cohort == "operational", ]
 prior <- predict(link, op)

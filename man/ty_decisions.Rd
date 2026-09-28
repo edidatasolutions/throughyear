@@ -48,7 +48,7 @@ between two independent replications: two MST administrations, and two
 independent sets of interim scores (`prior` and `prior_r2`).
 }
 \examples{
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 op <- sim[sim$cohort == "operational", ]
 link <- ty_link(sim)
 ty_decisions(ty_mst_default(), op$theta_S, predict(link, op),

@@ -23,7 +23,7 @@ under-predicts (late bloomers, students whose growth accelerated after the
 last interim) is the central fairness signal.
 }
 \examples{
-sim <- ty_simulate(n_calibration = 500, n_operational = 500, seed = 1)
+sim <- ty_simulate(n_calibration = 300, n_operational = 300, seed = 1)
 op <- sim[sim$cohort == "operational", ]
 prior <- predict(ty_link(sim), op)
 pol <- ty_policies(ty_mst_default(), op$theta_S, prior, seed = 1)
