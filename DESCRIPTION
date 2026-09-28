@@ -1,7 +1,8 @@
 Package: throughyear
 Title: Linking, Routing and Fairness for Through-Year Assessment
 Version: 0.1.0
-Authors@R: person("Daniel", "Edi", email = "danieledi2026@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Daniel", "Edi", email = "danieledi2026@gmail.com", role = c("aut", "cre", "cph"),
+    comment = c(ORCID = "0000-0001-5475-819X"))
 Description: Treats a through-year assessment system (interims during the
     year feeding a multistage summative) as the unit of analysis. Links
     interims to the summative scale with a latent multivariate normal model
