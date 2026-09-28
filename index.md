@@ -116,3 +116,10 @@ beyond multivariate normality). Next: growth-aware links (occasion
 timing as a covariate), adaptive shrinkage of the prior (discounting it
 when interim evidence is stale), subgroup-calibrated priors, and 1-2-3
 panel designs.
+
+## Getting help and contributing
+
+Questions and bug reports:
+<https://github.com/edidatasolutions/throughyear/issues>. See
+[CONTRIBUTING.md](https://edidatasolutions.github.io/throughyear/CONTRIBUTING.md)
+for how to report problems, get help, or contribute code.
