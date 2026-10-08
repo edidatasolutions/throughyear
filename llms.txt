@@ -1,5 +1,8 @@
 # throughyear
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/throughyear)](https://CRAN.R-project.org/package=throughyear)
+
 **The through-year system, not the single test, as the unit of
 analysis.**
 
@@ -31,7 +34,7 @@ ty_decisions(mst, op$theta_S, pr, predict(link, op, suffix = "_r2"), cut = 0.3)
 
 ## Installation
 
-From CRAN (once released):
+From CRAN:
 
 ``` r
 

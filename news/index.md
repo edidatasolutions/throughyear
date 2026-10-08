@@ -2,6 +2,8 @@
 
 ## throughyear 0.1.0
 
+CRAN release: 2026-10-08
+
 - Initial release.
 - Latent multivariate-normal linking of interims to the summative scale
   with measurement error and missing interims
